@@ -20,23 +20,31 @@
     <input id="idInput" data-testid="idInput" placeholder="idNumber">
     <input id="titleInput" data-testid="titleInput" placeholder="jobTitle">
     <input id="annualSalaryInput" data-testid="annualSalaryInput" placeholder="annualSalary">
-    <button id="submitButton" data-testid="submitButton" onclick="submitButton()">Submit</button>
-    <h2>Employees</h2>
-    <table>
-      <thead>
-        <td> First Name</td>
-        <td>Last Name</td>
-        <td>ID</td>
-        <td>Job Title</td>
-        <td>Annual Salary</td>
-      </thead>
+    <button id="submitButton" data-testid="submitButton" onclick="submitButton(event)">Submit</button>
+    <section>
+      <h2>Employees</h2>
+      <table id="tableData">
+        <thead>
+          <td> First Name</td>
+          <td>Last Name</td>
+          <td>ID</td>
+          <td>Job Title</td>
+          <td>Annual Salary</td>
+          <td><!--deleteButton--></td>
+        </thead>
+        <tbody>
+          <tr></tr>
+        </tbody>
 
 
 
-    </table>
+      </table>
+    </section>
   </main>
   <footer>
     <p>Total Monthly</p>
+    <p id="totalMonthly"></p>
+    <span id="overBudget"></span>
   </footer>
 </body>
 

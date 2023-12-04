@@ -1,6 +1,9 @@
 console.log("script.js is succesfully linked");
 
-function submitButton() {
+let totalMonthly = 0
+let deleteButtonButton = document.createElement("deleteButton");
+
+function submitButton(event) {
     console.log("we're clicking the submit button!");
 
     const submitFirstName = document.getElementById("firstNameInput")
@@ -25,4 +28,41 @@ function submitButton() {
     const annualSalaryInputValue = annualSalaryInput.value
     console.log("annualSalaryInputValue", annualSalaryInputValue);
 
+    const affTable = document.querySelector("#tableData tbody");
+    affTable.innerHTML += "<tr><td>" + firstNameInput.value + "</td><td>" + lastNameInput.value + "</td><td>" + idInput.value + "</td><td>" + titleInput.value + "</td><td>" + annualSalaryInput.value + "</td></tr>"
+    event.preventDefault();
+
+
+
+    totalMonthly += Number(annualSalaryInput.value)
+    const divideBy = 12;
+    let monthlySalaryExpense = totalMonthly / divideBy;
+
+    let assignTotal = document.getElementById("totalMonthly");
+    assignTotal.innerText = monthlySalaryExpense;
+    if (monthlySalaryExpense > 20000) {
+        let overBudget = document.getElementById('overBudget')
+        overBudget.innerText = "| OVER BUDGET!"
+    }
+
+
+
+
+    event.preventDefault()
 }
+
+
+let deleteButton = document.createElement("button");
+deleteButtonButton.innerText = "Delete";
+deleteButtonButton.append(deleteButton);
+deleteButtonButton.setAttribute("onclick", "deleteInfo(event)");
+
+function deleteInfo(event) {
+    // Console log to find path to correct node of entire row data
+    console.log("test", event.target.parentNode.parentNode);
+
+    event.target.parentNode.parentNode.remove();
+
+    event.preventDefault();
+}
+

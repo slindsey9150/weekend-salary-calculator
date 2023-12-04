@@ -45,7 +45,7 @@ function submitButton(event) {
         overBudget.innerText = "| OVER BUDGET!"
     }
 
-
+submitButton.reset();
 
 
     event.preventDefault()

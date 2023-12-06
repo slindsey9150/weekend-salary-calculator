@@ -14,14 +14,14 @@
     <h1>Salary Calculator</h1>
   </header>
   <main>
-    <h2>Add Employee</h2>
-    <input id="firstNameInput" data-testid="firstNameInput" placeholder="firstName">
-    <input id="lastNameInput" data-testid="lastNameInput" placeholder="lastName">
-    <input id="idInput" data-testid="idInput" placeholder="idNumber">
-    <input id="titleInput" data-testid="titleInput" placeholder="jobTitle">
-    <input id="annualSalaryInput" data-testid="annualSalaryInput" placeholder="annualSalary">
-    <button id="submitButton" data-testid="submitButton" onclick="submitButton(event)">Submit</button>
-    <section>
+
+    <h2 class="inputs">Add Employee</h2>
+      <input id="firstNameInput" data-testid="firstNameInput" placeholder="firstName">
+      <input id="lastNameInput" data-testid="lastNameInput" placeholder="lastName">
+      <input id="idInput" data-testid="idInput" placeholder="idNumber">
+      <input id="titleInput" data-testid="titleInput" placeholder="jobTitle">
+      <input id="annualSalaryInput" data-testid="annualSalaryInput" placeholder="annualSalary">
+      <button id="submitButton" data-testid="submitButton" onclick="submitButton(event)">Submit</button>
       <h2>Employees</h2>
       <table id="tableData">
         <thead>
@@ -32,18 +32,13 @@
           <td>Annual Salary</td>
           <td><!--deleteButton--></td>
         </thead>
-        <tbody>
-          <tr></tr>
+        <tbody id="whereRowsGo">
         </tbody>
-
-
-
       </table>
-    </section>
   </main>
   <footer>
     <p>Total Monthly</p>
-    <p id="totalMonthly"></p>
+    <span id="totalMonthly"></span>
     <span id="overBudget"></span>
   </footer>
 </body>
